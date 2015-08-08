@@ -1,0 +1,511 @@
+
+
+<!doctype html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ATコマンド集 &mdash; ESP-WROOM-02-Note 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="top" title="ESP-WROOM-02-Note 1.0 documentation" href="index.html" />
+    <link rel="next" title="データーシート置き場" href="PDF.html" />
+    <link rel="prev" title="ATコマンド サンプル集" href="ATSmple.html" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-24204483-2', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PDF.html" title="データーシート置き場"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ATSmple.html" title="ATコマンド サンプル集"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ESP-WROOM-02-Note 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ATコマンド集</a><ul>
+<li><a class="reference internal" href="#id1">0.ATコマンドの構文</a></li>
+<li><a class="reference internal" href="#id2">1.ATコマンド 基本形</a></li>
+<li><a class="reference internal" href="#at-wifi">2.ATコマンド WiFi周りのコマンド</a></li>
+<li><a class="reference internal" href="#at-tcp-ipudp">3.ATコマンド TCP/IP及びUDP周りのコマンド</a><ul>
+<li><a class="reference internal" href="#id3">提供</a></li>
+<li><a class="reference internal" href="#id4">管理情報</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ATSmple.html"
+                        title="previous chapter">ATコマンド サンプル集</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PDF.html"
+                        title="next chapter">データーシート置き場</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/ATcommand.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="at">
+<h1>ATコマンド集<a class="headerlink" href="#at" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>0.ATコマンドの構文<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils" id="id5">
+<caption><span class="caption-text">ATコマンドの構文</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="33%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">内容</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>AT+&lt;x&gt;=?</td>
+<td>コマンド確認用（？）</td>
+</tr>
+<tr class="row-odd"><td>AT+&lt;x&gt;?</td>
+<td>変数内容表示</td>
+</tr>
+<tr class="row-even"><td>AT+&lt;x&gt;=&lt;...&gt;</td>
+<td>変数に代入</td>
+</tr>
+<tr class="row-odd"><td>AT+&lt;x&gt;</td>
+<td>コマンド実行</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h2>1.ATコマンド 基本形<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils" id="id6">
+<caption><span class="caption-text">ATコマンドの構文</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="18%" />
+<col width="59%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">内容</th>
+<th class="head">戻り値内容</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>AT</td>
+<td>テスト用ATコマンド</td>
+<td>&gt;AT</td>
+</tr>
+<tr class="row-odd"><td>AT+RST</td>
+<td>リセットコマンド</td>
+<td>Boot文字が見える</td>
+</tr>
+<tr class="row-even"><td>AT+GMR</td>
+<td>バージョン確認用コマンド</td>
+<td>バージョンが表示される</td>
+</tr>
+<tr class="row-odd"><td>AT+GSLP</td>
+<td>Deap-Sleapモードに移行</td>
+<td>(確認中)</td>
+</tr>
+<tr class="row-even"><td>ATE</td>
+<td>エコー有り無し指定？</td>
+<td>(確認中)</td>
+</tr>
+<tr class="row-odd"><td>AT+RESTORE</td>
+<td>Factory Reset</td>
+<td>(確認中)</td>
+</tr>
+<tr class="row-even"><td>AT+UART</td>
+<td>シリアル通信設定（速度等）</td>
+<td>(確認中)</td>
+</tr>
+<tr class="row-odd"><td>AT+UART_CUR</td>
+<td>シリアル通信設定</td>
+<td>(確認中)</td>
+</tr>
+<tr class="row-even"><td>AT+UART_DEF</td>
+<td>シリアル通信設定</td>
+<td>(確認中)</td>
+</tr>
+<tr class="row-odd"><td>AT+SLEEP</td>
+<td>Sleep mode</td>
+<td>(確認中)</td>
+</tr>
+<tr class="row-even"><td>AT+RFPOWER</td>
+<td>Set RF TX Power</td>
+<td>(確認中)</td>
+</tr>
+<tr class="row-odd"><td>AT+RFVDD</td>
+<td>RF TX Power according to VDD33</td>
+<td>(確認中)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-wifi">
+<h2>2.ATコマンド WiFi周りのコマンド<a class="headerlink" href="#at-wifi" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">station:</th><td class="field-body">クライアントモード(子機)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">softAP:</th><td class="field-body">アクセスポイントモード(親機)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">station+softAP:</th><td class="field-body">クライアント＆アクセスポイントモード</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id7">
+<caption><span class="caption-text">ATコマンドの構文</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="18%" />
+<col width="59%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">内容</th>
+<th class="head">戻り値内容</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>AT+CWMODE</td>
+<td>WiFiモード選択(station/softAP/station+softAP)</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CWMODE_CUR</td>
+<td>WIFI mode(sta/AP/sta+AP)Won’t save to Flash</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CWMODE_DEF</td>
+<td>WIFI default mode(sta/AP/sta+AP)Save to Flash</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CWJAP</td>
+<td>アクセスポイントに接続する</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CWJAP_CUR</td>
+<td>Connect to AP, won’t save to Flash</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CWJAP_DEF</td>
+<td>Connect to AP, save to Flash</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CWLAP</td>
+<td>接続可能なアクセスポイントを表示</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CWQAP</td>
+<td>アクセスポイントへの接続を切る</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CWSAP</td>
+<td>softAP使用時の詳細設定</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CWSAP_CUR</td>
+<td>Set configuration of ESP8266 softAP Won’t save to Flash.</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CWSAP_DEF</td>
+<td>Set configuration of ESP8266 softAP Save to Flash.</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CWLIF</td>
+<td>softAP使用時にAPに接続されているIPを表示</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CWDHCP</td>
+<td>Enable/Disable DHCP, [&#64;deprecated]</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CWDHCP_CUR</td>
+<td>Enable/Disable DHCP, won’t save to Flash</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CWDHCP_DEF</td>
+<td>Enable/Disable DHCP, save to Flash</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CWAUTOCONN</td>
+<td>Connect to AP automatically when power on</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPSTAMAC</td>
+<td>Set mac address of ESP8266 station[&#64;deprecated]</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIPSTAMAC_CUR</td>
+<td>Set mac address of ESP8266 station Won’t save to Flash.</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPSTAMAC_DEF</td>
+<td>Set mac address of ESP8266 station Save to Flash.</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIPAPMAC</td>
+<td>Set mac address of ESP8266 softAP[&#64;deprecated]</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPAPMAC_CUR</td>
+<td>Set mac address of ESP8266 softAP Won’t save to Flash.</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIPAPMAC_DEF</td>
+<td>Set mac address of ESP8266 softAP Save to Flash.</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPSTA</td>
+<td>Set IP address of ESP8266 station, [&#64;deprecated]</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIPSTA_CUR</td>
+<td>Set IP address of ESP8266 station Won’t save to Flash.</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPSTA_DEF</td>
+<td>Set IP address of ESP8266 station Save to Flash.</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIPAP</td>
+<td>Set IP address of ESP8266 softAP Won’t save to Flash.</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPAP_CUR</td>
+<td>Set IP address of ESP8266 softAP Save to Flash.</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIPAP_DEF</td>
+<td>Set IP address of ESP8266 softAP, [&#64;deprecated]</td>
+<td>( )</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="at-tcp-ipudp">
+<h2>3.ATコマンド TCP/IP及びUDP周りのコマンド<a class="headerlink" href="#at-tcp-ipudp" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils" id="id8">
+<caption><span class="caption-text">ATコマンドの構文</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="18%" />
+<col width="59%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Command</th>
+<th class="head">内容</th>
+<th class="head">戻り値内容</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>AT+CIPSTATUS</td>
+<td>コネクション状態の表示</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIPSTART</td>
+<td>TCP/IP及びUDPへの接続先設定＆接続開始</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPSEND</td>
+<td>データー送信モード</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIPSENDEX</td>
+<td>Send data, if &lt;length&gt; or &#8216;0&#8217; is met, data will be sent</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPSENDBUF</td>
+<td>Write data into TCP-send-buffer</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIPBUFRESET</td>
+<td>Reset segment ID count</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPBUFSTATUS</td>
+<td>Check status of TCP-send-buffer</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIPCHECKSEG</td>
+<td>Check if a specific segment is sent or not</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPCLOSE</td>
+<td>コネクションを切断</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIFSR</td>
+<td>ローカルIPの表示</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPMUX</td>
+<td>マルチコネクションモードの設定</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIPSERVER</td>
+<td>サーバーモードとして設定</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPMODE</td>
+<td>転送モードの設定</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+SAVETRANSLINK</td>
+<td>Save transparent transmission link to Flash</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+CIPSTO</td>
+<td>TCPのタイムアウト時間の設定</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIUPDATE</td>
+<td>Upgrade firmware through network</td>
+<td>( )</td>
+</tr>
+<tr class="row-even"><td>AT+PING</td>
+<td>PINGコマンド</td>
+<td>( )</td>
+</tr>
+<tr class="row-odd"><td>AT+CIPDINFO</td>
+<td>Show remote IP and remote port with &#8216;+IPD&#8217;</td>
+<td>( )</td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="id3">
+<h3>提供<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>ArtifactNoise.</p>
+<a class="reference external image-reference" href="http://artifactnoise.com"><img alt="ArtifactNoise" src="_images/ANlogoMark.png" style="width: 243.54px; height: 52.2px;" /></a>
+</div>
+<div class="section" id="id4">
+<h3>管理情報<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">初版:</th><td class="field-body">2015/08/09</td>
+</tr>
+<tr class="field-even field"><th class="field-name">作成者:</th><td class="field-body">Yuta kitagami</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">連絡先:</th><td class="field-body"><a class="reference external" href="mailto:kitagami&#37;&#52;&#48;artifactnoise&#46;com">kitagami<span>&#64;</span>artifactnoise<span>&#46;</span>com</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">twitter:</th><td class="field-body">&#64;nonNoise</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PDF.html" title="データーシート置き場"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ATSmple.html" title="ATコマンド サンプル集"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">ESP-WROOM-02-Note 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2015, ArtifactNoise..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.3.1.
+    </div>
+  </body>
+</html>
