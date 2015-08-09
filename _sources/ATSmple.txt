@@ -15,7 +15,7 @@ ESP-WROOM-02を使う上でよく使うコマンドをまとめていきます�
 説明の都合上、以下の記号を追加しますが、実際は送受信されません。
 
 :送信: ●
-:受信: 
+:受信:
 :コメント: ○これはコメント
 :station: クライアントモード(子機)
 :softAP: アクセスポイントモード(親機)
@@ -35,7 +35,7 @@ ESP-WROOM-02を使う上でよく使うコマンドをまとめていきます�
     AT version:0.25.0.0(Jun  5 2015 16:27:16)
 
     SDK version:1.1.1
-    
+
     compile time:Jun  5 2015 21:03:10
 
     |
@@ -61,13 +61,13 @@ ESP-WROOM-02を使う上でよく使うコマンドをまとめていきます�
     +CWLAP:(4,"xxxxxxxxx",-83,"xx:xx:xx:xx:xx:xx",1)
 
     +CWLAP:(4,"xxxxxxxxx",-92,"xx:xx:xx:xx:xx:xx",1)
-    
+
     +CWLAP:(4,"xxxxxxxxx",-94,"xx:xx:xx:xx:xx:xx",3)
-    
+
     +CWLAP:(4,"xxxxxxxxx",-57,"xx:xx:xx:xx:xx:xx",11)
-    
+
     +CWLAP:(4,"xxxxxxxxx",-74,"xx:xx:xx:xx:xx:xx",11)
-    
+
     +CWLAP:(2,"xxxxxxxxx",-75,"xx:xx:xx:xx:xx:xx",11)
 
     - 受信出来たアクセスポイントを表示
@@ -75,25 +75,25 @@ ESP-WROOM-02を使う上でよく使うコマンドをまとめていきます�
         :ecn: 0:OPEN 1:WEP 2:WPA_PSK 3:WPA2_PSK 4:WPA_WPA2_PSK
         :ssid: アクセスポイントのSSID名
         :rssi: 電波強度(dB)
-        :mac: アクセスポイントのMACアドレス 
+        :mac: アクセスポイントのMACアドレス
 
 - AT+CWJAP="ssid","password"
 
 
     WIFI CONNECTED
 
-    GOT IP
-    
+    WIFI GOT IP
+
     |
     OK
-    
-    - アクセスポイントに接続、無事にIPが取れればGOT IPとなる。（Get IPのスペルミス?)
+
+    - アクセスポイントに接続、無事にIPが取れればGOT IPとなる。
 
 
 - AT+CIFSR
 
     +CIFSR:STAIP,"192.168.100.101"
-    
+
     +CIFSR:STAMAC,"xx:xx:xx:xx:xx:xx"
 
     |
@@ -104,7 +104,7 @@ ESP-WROOM-02を使う上でよく使うコマンドをまとめていきます�
 3. TCP/IPでサーバーに接続
 ----------------------------------------------
 
-- AT+CIPSTART=”TCP”,”IPAddr”,Port 
+- AT+CIPSTART=”TCP”,”IPAddr”,Port
 
 (準備中)
 
@@ -134,6 +134,7 @@ ArtifactNoise.
 管理情報
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+:改版: 2015/08/09　GOT は GET の過去形。（ボンミス）
 :初版: 2015/08/09
 
 :作成者: Yuta kitagami
