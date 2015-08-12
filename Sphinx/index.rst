@@ -23,6 +23,8 @@
 
 
 
+
+
 ESP-WROOM-02の購入
 -----------------------------------------------------------------
 
@@ -36,6 +38,11 @@ ESP-WROOM-02の購入は、
 
 また、変換基板も取り扱っている場所もございます。
 
+.. image:: img/Cerevo_ESP-WROOM-02.png
+  :width: 480px
+
+:Cerevo: http://cerevo.shop-pro.jp/?pid=91592223
+
 :スイッチサイエンス: https://www.switch-science.com/catalog/2362/
 :スイッチサイエンス: https://www.switch-science.com/catalog/2347/
 :スイッチサイエンス: https://www.switch-science.com/catalog/2363/
@@ -43,6 +50,9 @@ ESP-WROOM-02の購入は、
 
 
 
+
+.. image:: img/ESP-WROOM-02.png
+  :width: 480px
 
 
 提供
